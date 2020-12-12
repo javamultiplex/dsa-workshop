@@ -1,4 +1,4 @@
-package mathematics;
+package com.javamultiplex.mathematics;
 
 import com.javamultiplex.mathematics.FindNumberOfDigitsInNumber;
 import org.junit.jupiter.api.Assertions;
