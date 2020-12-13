@@ -8,10 +8,10 @@ import java.util.List;
  * @author Rohit Agarwal on 12/12/20 11:18 pm
  * @copyright www.javamultiplex.com
  */
-public class FindPrimeNumber {
+public class PrimeNumber {
 
     //O(sqrt(n))
-    public boolean isPrime(int number) {
+    public static boolean isPrime(int number) {
         if (number < 2) {
             return false;
         }
@@ -24,7 +24,7 @@ public class FindPrimeNumber {
     }
 
     //O(n*sqrt(n))
-    public List<Integer> getAllPrimeNumbers(int number) {
+    public static List<Integer> getAllPrimeNumbers(int number) {
         List<Integer> primeNumbers = new ArrayList<>();
         for (int i = 2; i <= number; i++) {
             if (isPrime(i)) {
@@ -34,7 +34,7 @@ public class FindPrimeNumber {
         return primeNumbers;
     }
 
-    public List<Integer> getAllPrimeNumbersUsingSeiveAlgorithm(int number) {
+    public static List<Integer> getAllPrimeNumbersUsingSeiveAlgorithm(int number) {
         boolean[] prime = new boolean[number + 1];
         List<Integer> primeNumbers = new ArrayList<>();
         Arrays.fill(prime, true);
