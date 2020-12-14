@@ -38,3 +38,37 @@ For example, roots of x2 - 2x + 1 are 1 and 1
 - If b2 > 4ac, then roots are real
 and different.
 For example, roots of x2 - 7x - 12 are 3 and 4
+  
+# Permutation
+
+Permutation is the different arrangements of a given number of elements taken one by one, or some, or all at a time. 
+For example, if we have two elements A and B, then there are two possible arrangements, AB and BA.
+
+Number of permutations when 'r' elements are arranged out of a total of 'n' elements is n P r = n! / (n - r)!.
+
+For example, let n = 4 (A, B, C and D) and r = 2 (All permutations of size 2). The answer is 4!/(4-2)! = 12. The twelve permutations are AB, AC, AD, BA, BC, BD, CA, CB, CD, DA, DB and DC.
+
+Important Properties of Permutation:
+- n P n = n*(n-1)*(n-2)*......*1 = n!.
+- n P 0 = n! / n! = 1.
+- n P 1 = n.
+- n P n-1 = n!.
+- n P r/n P r-1 = n - r + 1.
+
+Permutation with **repetition** allowed: The number of permutation or arrangements of N numbers with repetition allowed will be N^N. For Example, permutations of {1,2} with repetitions will be {{1,1}, {1,2}, {2,1},{2,2}}.
+
+Permutation with **duplicates**: The number of permutations or arrangements of N objects of which p1 are of one kind, p2 are of second kind, ..., pk are of k-th kind and the rest if any, are of different kinds is: N! / (p1! * p2! *....*pk!).
+
+# Combination
+
+Combination is the different selections of a given number of elements taken one by one, or some, or all at a time. For example, if we have two elements A and B, then there is only one way to 00select two items, we select both of them.
+
+Number of combinations when 'r' elements are selected out of a total of 'n' elements is n C r = n! / [ (r !) * (n - r)! ]. For example, let n = 4 (A, B, C and D) and r = 2 (All combinations of size 2). The answer is 4!/((4-2)!*2!) = 6. The six combinations are AB, AC, AD, BC, BD, CD.
+
+Important Properties of Combination:
+- n C 0 = n C n = 1.
+- n C r = n C n-r.
+- n C r + n C r-1 = n+1 C r.
+- n * n-1 C r-1 = (n - r + 1)* n C r-1.
+
+
