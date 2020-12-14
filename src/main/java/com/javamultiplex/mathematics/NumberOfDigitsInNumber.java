@@ -18,6 +18,6 @@ public class NumberOfDigitsInNumber {
 
     //O(1)
     public static int method2(int number) {
-        return (int) Math.ceil(Math.log10(number));
+        return (int) Math.floor(Math.log10(number)) + 1;
     }
 }

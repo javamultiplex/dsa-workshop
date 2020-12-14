@@ -22,5 +22,26 @@ public class NumberOfTrailingZerosInFactorialOfNumberTest {
 
         int result4 = NumberOfTrailingZerosInFactorialOfNumber.method1(90);
         assertEquals(21, result4);
+
+        int result5 = NumberOfTrailingZerosInFactorialOfNumber.method2(125);
+        assertEquals(31, result5);
+    }
+
+    @Test
+    public void shouldTestMethod2() {
+        int result1 = NumberOfTrailingZerosInFactorialOfNumber.method2(5);
+        assertEquals(1, result1);
+
+        int result2 = NumberOfTrailingZerosInFactorialOfNumber.method2(20);
+        assertEquals(4, result2);
+
+        int result3 = NumberOfTrailingZerosInFactorialOfNumber.method2(30);
+        assertEquals(7, result3);
+
+        int result4 = NumberOfTrailingZerosInFactorialOfNumber.method2(90);
+        assertEquals(21, result4);
+
+        int result5 = NumberOfTrailingZerosInFactorialOfNumber.method2(125);
+        assertEquals(31, result5);
     }
 }

@@ -21,6 +21,10 @@ public class NumberOfDigitsInNumberTest {
         assertEquals(3, result3);
         int result4 = NumberOfDigitsInNumber.method1(58964);
         assertEquals(5, result4);
+        int result5 = NumberOfDigitsInNumber.method2(1000);
+        assertEquals(4, result5);
+        int result6 = NumberOfDigitsInNumber.method2(101);
+        assertEquals(3, result6);
     }
 
     @Test
@@ -33,5 +37,9 @@ public class NumberOfDigitsInNumberTest {
         assertEquals(3, result3);
         int result4 = NumberOfDigitsInNumber.method2(58964);
         assertEquals(5, result4);
+        int result5 = NumberOfDigitsInNumber.method2(1000);
+        assertEquals(4, result5);
+        int result6 = NumberOfDigitsInNumber.method2(101);
+        assertEquals(3, result6);
     }
 }
