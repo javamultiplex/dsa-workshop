@@ -11,4 +11,8 @@ public class LCM {
         int gcd = GCD.getGCD(a, b);
         return (a * b) / gcd;
     }
+    public static long getLCM(long a, long b) {
+        long gcd = GCD.getGCD(a, b);
+        return (a * b) / gcd;
+    }
 }

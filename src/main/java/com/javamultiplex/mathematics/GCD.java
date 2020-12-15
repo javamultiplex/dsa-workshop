@@ -15,4 +15,11 @@ public class GCD {
         }
         return getGCD(b % a, a);
     }
+
+    public static long getGCD(long a, long b) {
+        if (a == 0) {
+            return b;
+        }
+        return getGCD(b % a, a);
+    }
 }
