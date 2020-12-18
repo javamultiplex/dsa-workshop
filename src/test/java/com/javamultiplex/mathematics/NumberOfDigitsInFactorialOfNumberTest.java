@@ -12,10 +12,18 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NumberOfDigitsInFactorialOfNumberTest {
 
     @Test
-    public void shouldFindNumberOfDigitsInFactorial() {
-        int digits1 = NumberOfDigitsInFactorialOfNumber.digitsInFactorial(5);
+    public void shouldFindNumberOfDigitsInFactorialByMethod1() {
+        int digits1 = NumberOfDigitsInFactorialOfNumber.method1(5);
         assertEquals(3, digits1);
-        int digits2 = NumberOfDigitsInFactorialOfNumber.digitsInFactorial(120);
+        int digits2 = NumberOfDigitsInFactorialOfNumber.method1(120);
+        assertEquals(199, digits2);
+    }
+
+    @Test
+    public void shouldFindNumberOfDigitsInFactorialByMethod2() {
+        int digits1 = NumberOfDigitsInFactorialOfNumber.method2(5);
+        assertEquals(3, digits1);
+        int digits2 = NumberOfDigitsInFactorialOfNumber.method2(120);
         assertEquals(199, digits2);
     }
 }
