@@ -34,7 +34,7 @@ public class PrimeNumber {
         return primeNumbers;
     }
 
-    public static List<Integer> getAllPrimeNumbersUsingSeiveAlgorithm(int number) {
+    public static List<Integer> getAllPrimeNumbersUsingSimpleSeiveAlgorithm(int number) {
         boolean[] prime = new boolean[number + 1];
         List<Integer> primeNumbers = new ArrayList<>();
         Arrays.fill(prime, true);
