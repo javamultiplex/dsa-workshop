@@ -8,11 +8,11 @@ package com.javamultiplex.mathematics;
 //LCM * HCF = a * b
 public class LCM {
     public static int getLCM(int a, int b) {
-        int gcd = GCD.getGCD(a, b);
+        int gcd = GCD.gcd(a, b);
         return (a * b) / gcd;
     }
     public static long getLCM(long a, long b) {
-        long gcd = GCD.getGCD(a, b);
+        long gcd = GCD.gcd(a, b);
         return (a * b) / gcd;
     }
 }
