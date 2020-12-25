@@ -1,7 +1,6 @@
 package com.javamultiplex.mathematics;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
@@ -37,10 +36,10 @@ public class PrimeNumberTest {
 
     @Test
     public void shouldGetAllPrimeNumbersUsingSeiveAlgorithm() {
-        List<Integer> list1 = PrimeNumber.getAllPrimeNumbersUsingSimpleSeiveAlgorithm(7);
+        List<Integer> list1 = PrimeNumber.getAllPrimeNumbersUsingSeiveAlgorithm(7);
         Assertions.assertEquals(Arrays.asList(2, 3, 5, 7), list1);
 
-        List<Integer> list2 = PrimeNumber.getAllPrimeNumbersUsingSimpleSeiveAlgorithm(15);
+        List<Integer> list2 = PrimeNumber.getAllPrimeNumbersUsingSeiveAlgorithm(15);
         Assertions.assertEquals(Arrays.asList(2, 3, 5, 7, 11, 13), list2);
     }
 }

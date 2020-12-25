@@ -12,13 +12,13 @@ public class Exactly3DivisorsTest {
 
     @Test
     public void shouldGetExactly3DivisorsCountUsingSimpleSeive() {
-        int result1 = Exactly3Divisors.getExactly3DivisorsUsingSimpleSeive(6);
+        int result1 = Exactly3Divisors.getExactly3DivisorsUsingSeiveAlgorithm(6);
         assertEquals(1, result1);
-        int result2 = Exactly3Divisors.getExactly3DivisorsUsingSimpleSeive(10);
+        int result2 = Exactly3Divisors.getExactly3DivisorsUsingSeiveAlgorithm(10);
         assertEquals(2, result2);
-        int result3 = Exactly3Divisors.getExactly3DivisorsUsingSimpleSeive(25);
+        int result3 = Exactly3Divisors.getExactly3DivisorsUsingSeiveAlgorithm(25);
         assertEquals(3, result3);
-        int result4 = Exactly3Divisors.getExactly3DivisorsUsingSimpleSeive(49);
+        int result4 = Exactly3Divisors.getExactly3DivisorsUsingSeiveAlgorithm(49);
         assertEquals(4, result4);
     }
 

@@ -2,8 +2,6 @@ package com.javamultiplex.mathematics;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -32,17 +30,17 @@ public class GCDTest {
     @Test
     public void shouldCalculateGCDAndCoefficients() {
         int[] c1 = {1, 1};
-        int result1 = GCD.gcdExtended(56, 15, c1);
+        int result1 = GCD.gcd(56, 15, c1);
         assertEquals(1, result1);
         assertArrayEquals(new int[]{-4, 15}, c1);
 
         int[] c2 = {1, 1};
-        int result2 = GCD.gcdExtended(3, 11, c2);
+        int result2 = GCD.gcd(3, 11, c2);
         assertEquals(1, result2);
         assertArrayEquals(new int[]{4, -1}, c2);
 
         int[] c3 = {1, 1};
-        int result3 = GCD.gcdExtended(10, 17, c3);
+        int result3 = GCD.gcd(10, 17, c3);
         assertEquals(1, result3);
         assertArrayEquals(new int[]{-5, 3}, c3);
     }

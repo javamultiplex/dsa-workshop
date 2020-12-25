@@ -9,9 +9,9 @@ import java.util.List;
 public class Exactly3Divisors {
 
     //This will not work for large input
-    public static int getExactly3DivisorsUsingSimpleSeive(int N) {
+    public static int getExactly3DivisorsUsingSeiveAlgorithm(int N) {
         int count = 0;
-        List<Integer> list = PrimeNumber.getAllPrimeNumbersUsingSimpleSeiveAlgorithm(N);
+        List<Integer> list = PrimeNumber.getAllPrimeNumbersUsingSeiveAlgorithm(N);
         for (Integer item : list) {
             long square = (long) item * item;
             if (square <= N) {

@@ -1,7 +1,6 @@
 package com.javamultiplex.mathematics;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -34,23 +33,7 @@ public class PrimeNumber {
         return primeNumbers;
     }
 
-    public static List<Integer> getAllPrimeNumbersUsingSimpleSeiveAlgorithm(int number) {
-        boolean[] prime = new boolean[number + 1];
-        List<Integer> primeNumbers = new ArrayList<>();
-        Arrays.fill(prime, true);
-        for (int i = 2; i * i <= number; i++) {
-            if (prime[i]) {
-                for (int j = i * i; j <= number; j += i) {
-                    prime[j] = false;
-                }
-            }
-        }
-
-        for (int i = 2; i <= number; i++) {
-            if (prime[i]) {
-                primeNumbers.add(i);
-            }
-        }
-        return primeNumbers;
+    public static List<Integer> getAllPrimeNumbersUsingSeiveAlgorithm(int number) {
+        return SeiveAlgorithm.getAllPrimeNumbers(number);
     }
 }
