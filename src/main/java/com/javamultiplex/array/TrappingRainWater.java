@@ -6,7 +6,7 @@ package com.javamultiplex.array;
  */
 public class TrappingRainWater {
     //O(n^2)
-    public static int maxWater(int[] arr, int n) {
+    public static int maxWaterByBruteForce(int[] arr, int n) {
         int result = 0;
         for (int i = 1; i < n - 1; i++) {
             int left = leftMax(arr, i);
@@ -15,6 +15,33 @@ public class TrappingRainWater {
         }
         return result;
     }
+
+    //O(n)
+    public static int maxWater(int[] arr, int n) {
+        int[] leftMax = new int[n];
+        int max = arr[0];
+        for (int i = 1; i < n - 1; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            leftMax[i] = max;
+        }
+
+        max = arr[n - 1];
+        int[] rightMax = new int[n];
+        for (int i = n - 2; i >= 0; i--) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            rightMax[i] = max;
+        }
+        int result = 0;
+        for (int i = 1; i < n - 1; i++) {
+            result = result + Math.min(leftMax[i], rightMax[i]) - arr[i];
+        }
+        return result;
+    }
+
 
     private static int rightMax(int[] arr, int i, int n) {
         int max = 0;
