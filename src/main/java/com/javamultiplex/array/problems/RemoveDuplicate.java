@@ -31,4 +31,24 @@ public class RemoveDuplicate {
 
         return count;
     }
+
+    //Time - O(N), Space - O(1)
+    public static int method2(int[] arr, int n) {
+        int temp = arr[0];
+        for (int i = 1; i < n; i++) {
+            if (arr[i] == temp) {
+                arr[i] = 0;
+            } else {
+                temp = arr[i];
+            }
+        }
+
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] != 0) {
+                arr[j++] = arr[i];
+            }
+        }
+        return j;
+    }
 }
