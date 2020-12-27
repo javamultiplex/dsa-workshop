@@ -1,4 +1,4 @@
-package com.javamultiplex.array;
+package com.javamultiplex.array.problems;
 
 /**
  * @author Rohit Agarwal on 25/12/20 11:51 pm

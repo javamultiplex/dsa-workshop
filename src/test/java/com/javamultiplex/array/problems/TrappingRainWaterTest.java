@@ -1,4 +1,4 @@
-package com.javamultiplex.array;
+package com.javamultiplex.array.problems;
 
 import org.junit.jupiter.api.Test;
 
