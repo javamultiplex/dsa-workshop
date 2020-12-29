@@ -10,24 +10,46 @@ import org.junit.jupiter.api.Test;
 public class ArrayReversalTest {
 
     @Test
-    public void shouldReverse_oddSizeArray() {
+    public void shouldReverse_oddSizeArray_iterative() {
         int[] arr = {1, 2, 3, 4, 5};
-        ArrayReversal.reverse(arr, 0, 2);
+        ArrayReversal.method1(arr, 0, 1);
         Assertions.assertArrayEquals(new int[]{2, 1, 3, 4, 5}, arr);
-        ArrayReversal.reverse(arr, 2, 5);
+        ArrayReversal.method1(arr, 2, 4);
         Assertions.assertArrayEquals(new int[]{2, 1, 5, 4, 3}, arr);
-        ArrayReversal.reverse(arr, 0, 5);
+        ArrayReversal.method1(arr, 0, 4);
         Assertions.assertArrayEquals(new int[]{3, 4, 5, 1, 2}, arr);
     }
 
     @Test
-    public void shouldReverse_evenSizeArray() {
+    public void shouldReverse_evenSizeArray_iterative() {
         int[] arr = {1, 2, 3, 4, 5, 6};
-        ArrayReversal.reverse(arr, 0, 2);
+        ArrayReversal.method1(arr, 0, 1);
         Assertions.assertArrayEquals(new int[]{2, 1, 3, 4, 5, 6}, arr);
-        ArrayReversal.reverse(arr, 2, 6);
+        ArrayReversal.method1(arr, 2, 5);
         Assertions.assertArrayEquals(new int[]{2, 1, 6, 5, 4, 3}, arr);
-        ArrayReversal.reverse(arr, 0, 6);
+        ArrayReversal.method1(arr, 0, 5);
+        Assertions.assertArrayEquals(new int[]{3, 4, 5, 6, 1, 2}, arr);
+    }
+
+    @Test
+    public void shouldReverse_oddSizeArray_recursive() {
+        int[] arr = {1, 2, 3, 4, 5};
+        ArrayReversal.method2(arr, 0, 1);
+        Assertions.assertArrayEquals(new int[]{2, 1, 3, 4, 5}, arr);
+        ArrayReversal.method2(arr, 2, 4);
+        Assertions.assertArrayEquals(new int[]{2, 1, 5, 4, 3}, arr);
+        ArrayReversal.method2(arr, 0, 4);
+        Assertions.assertArrayEquals(new int[]{3, 4, 5, 1, 2}, arr);
+    }
+
+    @Test
+    public void shouldReverse_evenSizeArray_recursive() {
+        int[] arr = {1, 2, 3, 4, 5, 6};
+        ArrayReversal.method2(arr, 0, 1);
+        Assertions.assertArrayEquals(new int[]{2, 1, 3, 4, 5, 6}, arr);
+        ArrayReversal.method2(arr, 2, 5);
+        Assertions.assertArrayEquals(new int[]{2, 1, 6, 5, 4, 3}, arr);
+        ArrayReversal.method2(arr, 0, 5);
         Assertions.assertArrayEquals(new int[]{3, 4, 5, 6, 1, 2}, arr);
     }
 }

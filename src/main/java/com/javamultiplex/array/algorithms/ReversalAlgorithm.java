@@ -8,16 +8,18 @@ import com.javamultiplex.array.problems.ArrayReversal;
  */
 public class ReversalAlgorithm {
 
+    //Time - O(n), Space - O(1)
     public static void leftRotate(int[] arr, int n, int d) {
-        ArrayReversal.reverse(arr, 0, d);
-        ArrayReversal.reverse(arr, d, n);
-        ArrayReversal.reverse(arr, 0, n);
+        ArrayReversal.method1(arr, 0, d - 1);
+        ArrayReversal.method1(arr, d, n - 1);
+        ArrayReversal.method1(arr, 0, n - 1);
     }
 
+    //Time - O(n), Space - O(1)
     public static void rightRotate(int[] arr, int n, int d) {
-        ArrayReversal.reverse(arr, 0, n - d);
-        ArrayReversal.reverse(arr, n - d, n);
-        ArrayReversal.reverse(arr, 0, n);
+        ArrayReversal.method1(arr, 0, n - d - 1);
+        ArrayReversal.method1(arr, n - d, n - 1);
+        ArrayReversal.method1(arr, 0, n - 1);
     }
 
 }

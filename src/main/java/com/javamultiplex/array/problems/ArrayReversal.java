@@ -5,9 +5,9 @@ package com.javamultiplex.array.problems;
  * @copyright www.javamultiplex.com
  */
 public class ArrayReversal {
-    //Time - O(N), Space - O(1)
-    public static void reverse(int[] arr, int left, int right) {
-        int i = left, j = right - 1;
+    //Time - O(n), Space - O(1)
+    public static void method1(int[] arr, int left, int right) {
+        int i = left, j = right;
         int temp;
         while (i < j) {
             temp = arr[i];
@@ -16,5 +16,16 @@ public class ArrayReversal {
             i++;
             j--;
         }
+    }
+
+    //Time - O(n), Space - O(stack_size)
+    public static void method2(int[] arr, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+        method2(arr, left + 1, right - 1);
     }
 }
