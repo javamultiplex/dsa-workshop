@@ -21,4 +21,26 @@ public class ArrayRightRotationTest {
         ArrayRightRotation.method1(brr, 5, 4);
         assertArrayEquals(new int[]{2, 3, 4, 5, 1}, brr);
     }
+
+    @Test
+    public void shouldTestMethod2() {
+        int[] arr = {1, 2, 3, 4, 5};
+        ArrayRightRotation.method2(arr, 5, 2);
+        assertArrayEquals(new int[]{4, 5, 1, 2, 3}, arr);
+
+        int[] brr = {1, 2, 3, 4, 5};
+        ArrayRightRotation.method2(brr, 5, 4);
+        assertArrayEquals(new int[]{2, 3, 4, 5, 1}, brr);
+    }
+
+    @Test
+    public void shouldTestMethod3() {
+        int[] arr = {1, 2, 3, 4, 5};
+        ArrayRightRotation.method3(arr, 5, 2);
+        assertArrayEquals(new int[]{4, 5, 1, 2, 3}, arr);
+
+        int[] brr = {1, 2, 3, 4, 5};
+        ArrayRightRotation.method3(brr, 5, 4);
+        assertArrayEquals(new int[]{2, 3, 4, 5, 1}, brr);
+    }
 }

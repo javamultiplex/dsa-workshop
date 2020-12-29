@@ -25,4 +25,23 @@ public class ArrayRightRotation {
         }
     }
 
+    //Time - O(n*d), Space - O(1)
+    public static void method2(int[] arr, int n, int d) {
+        int temp;
+        for (int i = 0; i < d; i++) {
+            temp = arr[n - 1];
+            for (int j = n - 1; j > 0; j--) {
+                arr[j] = arr[j - 1];
+            }
+            arr[0] = temp;
+        }
+    }
+
+    //Time - O(n), Space - O(1)
+    public static void method3(int[] arr, int n, int d) {
+        ArrayReversal.reverse(arr, 0, n - d);
+        ArrayReversal.reverse(arr, n - d, n);
+        ArrayReversal.reverse(arr, 0, n);
+    }
+
 }
