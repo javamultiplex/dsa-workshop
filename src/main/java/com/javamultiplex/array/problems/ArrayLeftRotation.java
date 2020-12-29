@@ -1,6 +1,7 @@
 package com.javamultiplex.array.problems;
 
 import com.javamultiplex.array.algorithms.JugglingAlgorithm;
+import com.javamultiplex.array.algorithms.ReversalAlgorithm;
 
 /**
  * @author Rohit Agarwal on 27/12/20 3:07 pm
@@ -41,9 +42,7 @@ public class ArrayLeftRotation {
 
     //Time - O(n), Space - O(1)
     public static void method3(int[] arr, int n, int d) {
-        ArrayReversal.reverse(arr, 0, d);
-        ArrayReversal.reverse(arr, d, n);
-        ArrayReversal.reverse(arr, 0, n);
+        ReversalAlgorithm.leftRotate(arr, n, d);
     }
 
     //Time - O(n), Space - O(1)
