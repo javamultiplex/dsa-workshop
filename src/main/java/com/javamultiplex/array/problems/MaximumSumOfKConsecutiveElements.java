@@ -18,4 +18,25 @@ public class MaximumSumOfKConsecutiveElements {
         }
         return max;
     }
+
+    //Time - O(n), Space - O(1)
+    //Sliding window technique
+    public static int method2(int[] arr, int n, int k) {
+        int windowSum = 0;
+        if (k > n) {
+            return -1;
+        }
+        for (int i = 0; i < k; i++) {
+            windowSum += arr[i];
+        }
+        int maxSum = windowSum;
+
+        for (int i = 1; i <= n - k; i++) {
+            windowSum = windowSum - arr[i - 1] + arr[i + k - 1];
+            if (windowSum > maxSum) {
+                maxSum = windowSum;
+            }
+        }
+        return maxSum;
+    }
 }
