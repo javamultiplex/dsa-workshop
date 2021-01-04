@@ -5,7 +5,8 @@ package com.javamultiplex.array.problems;
  * @copyright www.javamultiplex.com
  */
 public class PrefixSumArray {
-    //Time - O(n), Space - O(1)
+
+    //Time - O(n), Space - O(n)
     public static int[] method1(int[] arr, int n) {
         int[] prefixSum = new int[n];
         prefixSum[0] = arr[0];
