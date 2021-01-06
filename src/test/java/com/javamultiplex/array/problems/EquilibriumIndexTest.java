@@ -11,8 +11,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class EquilibriumIndexTest {
 
     @Test
-    public void shouldGetEquilibriumIndex() {
+    public void shouldGetEquilibriumIndex_method1() {
         int index = EquilibriumIndex.method1(new int[]{-7, 1, 5, 2, -4, 3, 0}, 7);
+        assertEquals(3, index);
+    }
+
+    @Test
+    public void shouldGetEquilibriumIndex_method2() {
+        int index = EquilibriumIndex.method2(new int[]{-7, 1, 5, 2, -4, 3, 0}, 7);
         assertEquals(3, index);
     }
 }

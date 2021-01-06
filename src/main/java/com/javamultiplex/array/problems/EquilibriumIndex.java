@@ -13,7 +13,7 @@ public class EquilibriumIndex {
 
     //Time - O(n*n), Space - O(1)
     public static int method1(int[] arr, int n) {
-        for (int i = 1; i < n - 1; i++) {
+        for (int i = 0; i < n - 1; i++) {
             int leftSum = 0, rightSum = 0;
             for (int j = 0; j < i; j++) {
                 leftSum += arr[j];
@@ -27,5 +27,23 @@ public class EquilibriumIndex {
                 return i;
         }
         return -1;
+    }
+
+    //Time - O(n), Space - O(1)
+    public static int method2(int[] arr, int n) {
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += arr[i];
+        }
+        int rightSum = sum, leftSum = 0;
+        for (int i = 0; i < n - 1; i++) {
+            rightSum = rightSum - arr[i];
+            if (leftSum == rightSum) {
+                return i;
+            }
+            leftSum = leftSum + arr[i];
+        }
+        return -1;
+
     }
 }
