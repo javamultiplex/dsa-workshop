@@ -1,5 +1,7 @@
 package com.javamultiplex.array.problems;
 
+import com.javamultiplex.array.algorithms.KadaneAlgorithm;
+
 /**
  * @author Rohit Agarwal on 06/01/21 11:52 pm
  * @copyright www.javamultiplex.com
@@ -19,5 +21,10 @@ public class LargestSumSubArray {
             }
         }
         return max;
+    }
+
+    //Time - O(n), Space - O(1)
+    public static int method2(int[] arr, int n) {
+        return KadaneAlgorithm.getLargestSumSubArray(arr, n);
     }
 }
