@@ -11,7 +11,7 @@ public class BinarySearchAlgorithm {
         return recursive(arr, 0, n - 1, numberToSearch);
     }
 
-    private static int recursive(int[] arr, int left, int right, int numberToSearch) {
+    public static int recursive(int[] arr, int left, int right, int numberToSearch) {
         if (left > right) {
             return -1;
         } else {
@@ -30,7 +30,7 @@ public class BinarySearchAlgorithm {
         return iterative(arr, 0, n - 1, numberToSearch);
     }
 
-    private static int iterative(int[] arr, int left, int right, int numberToSearch) {
+    public static int iterative(int[] arr, int left, int right, int numberToSearch) {
         while (left <= right) {
             int mid = (left + right) / 2;
             if (arr[mid] == numberToSearch) {
