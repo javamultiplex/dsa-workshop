@@ -24,4 +24,12 @@ public class SmallestPositiveMissingNumberTest {
         int result2 = SmallestPositiveMissingNumber.method2(new int[]{1, 2, 3, 4, 5}, 5);
         assertEquals(6, result2);
     }
+
+    @Test
+    public void shouldFindMissingNumber_method3() {
+        int result = SmallestPositiveMissingNumber.method3(new int[]{0, -10, 1, 3, -20}, 5);
+        assertEquals(2, result);
+        int result2 = SmallestPositiveMissingNumber.method3(new int[]{1, 2, 3, 4, 5}, 5);
+        assertEquals(6, result2);
+    }
 }
