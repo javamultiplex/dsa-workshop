@@ -10,10 +10,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 public class SmallestPositiveMissingNumberTest {
     @Test
-    public void shouldFindMissingNumber() {
+    public void shouldFindMissingNumber_method1() {
         int result = SmallestPositiveMissingNumber.method1(new int[]{0, -10, 1, 3, -20}, 5);
         assertEquals(2, result);
         int result2 = SmallestPositiveMissingNumber.method1(new int[]{1, 2, 3, 4, 5}, 5);
+        assertEquals(6, result2);
+    }
+
+    @Test
+    public void shouldFindMissingNumber_method2() {
+        int result = SmallestPositiveMissingNumber.method2(new int[]{0, -10, 1, 3, -20}, 5);
+        assertEquals(2, result);
+        int result2 = SmallestPositiveMissingNumber.method2(new int[]{1, 2, 3, 4, 5}, 5);
         assertEquals(6, result2);
     }
 }
