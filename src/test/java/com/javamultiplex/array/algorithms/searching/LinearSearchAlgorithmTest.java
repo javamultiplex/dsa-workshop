@@ -1,5 +1,6 @@
-package com.javamultiplex.array.algorithms;
+package com.javamultiplex.array.algorithms.searching;
 
+import com.javamultiplex.array.algorithms.searching.LinearSearchAlgorithm;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 public class MergeTwoSortedArraysTest {
 
     @Test
-    public void shouldMergeTwoArrays() {
+    public void shouldMergeTwoArrays_method1() {
         int[] result = MergeTwoSortedArrays.method1(new int[]{1, 3, 4, 6}, new int[]{2, 5, 7, 8}, 4, 4);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6, 7, 8}, result);
 

@@ -1,6 +1,6 @@
 package com.javamultiplex.array.problems;
 
-import com.javamultiplex.array.algorithms.BinarySearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.BinarySearchAlgorithm;
 
 /**
  * @author Rohit Agarwal on 09/01/21 10:14 pm

@@ -5,7 +5,7 @@ package com.javamultiplex.array.problems;
  * @copyright www.javamultiplex.com
  */
 
-import com.javamultiplex.array.algorithms.LinearSearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.LinearSearchAlgorithm;
 
 /**
  * Given an array arr[] of size N, find the first repeating element.

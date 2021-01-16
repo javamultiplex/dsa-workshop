@@ -1,7 +1,7 @@
 package com.javamultiplex.array.problems;
 
-import com.javamultiplex.array.algorithms.BinarySearchAlgorithm;
-import com.javamultiplex.array.algorithms.LinearSearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.BinarySearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.LinearSearchAlgorithm;
 
 import java.util.Arrays;
 import java.util.Hashtable;

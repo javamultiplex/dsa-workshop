@@ -1,4 +1,4 @@
-package com.javamultiplex.array.algorithms;
+package com.javamultiplex.array.algorithms.searching;
 
 /**
  * @author Rohit Agarwal on 09/01/21 10:24 pm
