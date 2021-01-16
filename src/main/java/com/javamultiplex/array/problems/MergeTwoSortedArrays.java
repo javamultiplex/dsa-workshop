@@ -1,5 +1,7 @@
 package com.javamultiplex.array.problems;
 
+import java.util.Arrays;
+
 /**
  * @author Rohit Agarwal on 09/01/21 7:03 pm
  * @copyright www.javamultiplex.com
@@ -28,5 +30,19 @@ public class MergeTwoSortedArrays {
             }
         }
         return crr;
+    }
+
+    //Time - O(n+m)log(n+m) Space - O(1)
+    public static void method2(int[] arr, int[] brr, int n, int m) {
+        int temp, j = 0, i = n - 1;
+        while (i >= 0 && j < m && arr[i] > brr[j]) {
+            temp = arr[i];
+            arr[i] = brr[j];
+            brr[j] = temp;
+            i--;
+            j++;
+        }
+        Arrays.sort(arr);
+        Arrays.sort(brr);
     }
 }
