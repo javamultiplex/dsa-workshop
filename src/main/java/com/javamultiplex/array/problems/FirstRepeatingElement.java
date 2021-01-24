@@ -5,7 +5,7 @@ package com.javamultiplex.array.problems;
  * @copyright www.javamultiplex.com
  */
 
-import com.javamultiplex.array.algorithms.searching.LinearSearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.LinearSearch;
 
 /**
  * Given an array arr[] of size N, find the first repeating element.
@@ -16,7 +16,7 @@ public class FirstRepeatingElement {
     public static int firstRepeated(int[] arr, int n) {
         int min = Integer.MAX_VALUE;
         for (int i = 0; i < n - 1; i++) {
-            int index = LinearSearchAlgorithm.iterative(arr, i + 1, n - 1, arr[i]);
+            int index = LinearSearch.iterative(arr, i + 1, n - 1, arr[i]);
             if (index != -1) {
                 if (i < min) {
                     min = i;

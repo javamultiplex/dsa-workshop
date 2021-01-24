@@ -4,7 +4,7 @@ package com.javamultiplex.array.algorithms.searching;
  * @author Rohit Agarwal on 10/01/21 6:58 pm
  * @copyright www.javamultiplex.com
  */
-public class LinearSearchAlgorithm {
+public class LinearSearch {
 
     //Time - O(n), Space - O(1)
     public static int iterative(int[] arr, int n, int numberToSearch) {

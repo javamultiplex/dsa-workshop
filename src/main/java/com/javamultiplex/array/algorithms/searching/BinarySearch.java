@@ -4,7 +4,7 @@ package com.javamultiplex.array.algorithms.searching;
  * @author Rohit Agarwal on 09/01/21 10:24 pm
  * @copyright www.javamultiplex.com
  */
-public class BinarySearchAlgorithm {
+public class BinarySearch {
 
     //Time - O(logN), Space - O(n)
     public static int recursive(int[] arr, int n, int numberToSearch) {
@@ -15,7 +15,7 @@ public class BinarySearchAlgorithm {
         if (left > right) {
             return -1;
         } else {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             if (arr[mid] == numberToSearch) {
                 return mid;
             } else if (numberToSearch > arr[mid]) {
@@ -32,7 +32,7 @@ public class BinarySearchAlgorithm {
 
     public static int iterative(int[] arr, int left, int right, int numberToSearch) {
         while (left <= right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
             if (arr[mid] == numberToSearch) {
                 return mid;
             } else if (numberToSearch > arr[mid]) {

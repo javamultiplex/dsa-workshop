@@ -1,7 +1,7 @@
 package com.javamultiplex.array.problems;
 
-import com.javamultiplex.array.algorithms.searching.BinarySearchAlgorithm;
-import com.javamultiplex.array.algorithms.searching.LinearSearchAlgorithm;
+import com.javamultiplex.array.algorithms.searching.BinarySearch;
+import com.javamultiplex.array.algorithms.searching.LinearSearch;
 
 import java.util.Arrays;
 import java.util.Hashtable;
@@ -15,7 +15,7 @@ public class SmallestPositiveMissingNumber {
     //Time - O(n*n), Space - O(1)
     public static int method1(int[] arr, int n) {
         for (int i = 1; i <= n; i++) {
-            int index = LinearSearchAlgorithm.iterative(arr, n, i);
+            int index = LinearSearch.iterative(arr, n, i);
             if (index == -1) {
                 return i;
             }
@@ -27,7 +27,7 @@ public class SmallestPositiveMissingNumber {
     public static int method2(int[] arr, int n) {
         Arrays.sort(arr);
         for (int i = 1; i <= n; i++) {
-            int index = BinarySearchAlgorithm.iterative(arr, n, i);
+            int index = BinarySearch.iterative(arr, n, i);
             if (index == -1) {
                 return i;
             }
