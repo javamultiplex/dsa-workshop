@@ -29,7 +29,7 @@ public class SpiralMatrixTraversal {
      * Output: 1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10
      * Explanation: The output is matrix in spiral format.
      */
-    public static List<Integer> traversal(int[][] mat) {
+    public static List<Integer> traverse(int[][] mat) {
         List<Integer> list = new ArrayList<>();
         int left = 0, right = mat[0].length - 1, top = 0, bottom = mat.length - 1;
         int size = mat.length * mat[0].length;
