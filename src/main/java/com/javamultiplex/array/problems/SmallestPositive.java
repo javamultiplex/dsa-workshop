@@ -9,6 +9,7 @@ import java.util.Arrays;
 public class SmallestPositive {
 
     //Time - O(nlog(n)), Space - O(1)
+    //https://medium.com/dexters-lab/eli5-find-the-smallest-positive-integer-value-that-cannot-be-represented-as-sum-of-any-subset-of-f8ea2488184b
     public static long method1(long[] array, int n) {
         Arrays.sort(array);
         long res = 1;
