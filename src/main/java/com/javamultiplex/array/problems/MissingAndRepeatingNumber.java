@@ -29,4 +29,29 @@ public class MissingAndRepeatingNumber {
         }
         return output;
     }
+
+
+    //Time - O(n), Space - O(n+1)
+    public static int[] method2(int[] arr, int n) {
+        int[] crr = new int[n + 1];
+        int[] output = new int[2];
+        for (int i = 0; i < n; i++) {
+            crr[arr[i]]++;
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (crr[i] == 0) {
+                output[0] = i;
+                break;
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            if (crr[i] > 1) {
+                output[1] = i;
+                break;
+            }
+        }
+        return output;
+    }
 }
