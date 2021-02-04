@@ -31,7 +31,7 @@ public class MissingAndRepeatingNumber {
     }
 
 
-    //Time - O(n), Space - O(n+1)
+    //Time - O(n), Space - O(n)
     public static int[] method2(int[] arr, int n) {
         int[] crr = new int[n + 1];
         int[] output = new int[2];
@@ -50,6 +50,26 @@ public class MissingAndRepeatingNumber {
             if (crr[i] > 1) {
                 output[1] = i;
                 break;
+            }
+        }
+        return output;
+    }
+
+    //Time - O(n), Space - O(1)
+    public static int[] method3(int[] arr, int n) {
+        int[] output = new int[2];
+        for (int i = 0; i < n; i++) {
+            int temp = arr[Math.abs(arr[i]) - 1];
+            if (temp < 0) {
+                output[1] = Math.abs(arr[i]);
+            } else {
+                arr[Math.abs(arr[i]) - 1] = -1 * arr[Math.abs(arr[i]) - 1];
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > 0) {
+                output[0] = i + 1;
             }
         }
         return output;
