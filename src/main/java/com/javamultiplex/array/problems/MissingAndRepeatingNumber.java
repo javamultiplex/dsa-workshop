@@ -12,7 +12,7 @@ public class MissingAndRepeatingNumber {
     //Time - O(nlog(n)), Space - O(1)
     public static int[] method1(int[] arr, int n) {
         int[] output = new int[2];
-        QuickSort.sort(arr, n);
+        QuickSort.sort(arr);
         for (int i = 1; i <= n; i++) {
             int index = BinarySearch.iterative(arr, n, i);
             if (index == -1) {

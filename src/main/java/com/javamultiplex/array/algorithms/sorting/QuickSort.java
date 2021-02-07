@@ -9,7 +9,8 @@ import com.javamultiplex.array.problems.ArraySwap;
 public class QuickSort {
 
     //Best Time - O(nlog(n)), Worst Time - O(n*n), Space - O(1)
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         quickSort(arr, 0, n - 1);
     }
 

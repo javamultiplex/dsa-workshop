@@ -13,13 +13,13 @@ public class MergeSortTest {
     @Test
     public void shouldSort() {
         int[] arr = {5, 4, 3, 2, 1};
-        MergeSort.sort(arr, 5);
+        MergeSort.sort(arr);
         assertArrayEquals(new int[]{1, 2, 3, 4, 5}, arr);
         int[] brr = {4, 5, 10, 1, 6, 2};
-        MergeSort.sort(brr, 6);
+        MergeSort.sort(brr);
         assertArrayEquals(new int[]{1, 2, 4, 5, 6, 10}, brr);
         int[] crr = {10, 20, 30, 40, 1, 2, 3, 4};
-        MergeSort.sort(crr, 8);
+        MergeSort.sort(crr);
         assertArrayEquals(new int[]{1, 2, 3, 4, 10, 20, 30, 40}, crr);
     }
 }

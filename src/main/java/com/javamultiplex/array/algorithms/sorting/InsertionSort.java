@@ -7,7 +7,8 @@ package com.javamultiplex.array.algorithms.sorting;
 public class InsertionSort {
 
     //Worst Time - O(n*n), Best Time - Omega(n), Space - O(1)
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         int temp;
         for (int i = 1; i < n; i++) {
             temp = arr[i];

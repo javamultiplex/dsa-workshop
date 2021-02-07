@@ -9,7 +9,8 @@ import com.javamultiplex.array.problems.ArraySwap;
 public class BubbleSort {
 
     //Time - O(n*n), Space - O(1)
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         for (int i = n - 1; i >= 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {

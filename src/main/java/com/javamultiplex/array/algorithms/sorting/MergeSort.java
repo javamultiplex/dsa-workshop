@@ -7,7 +7,8 @@ package com.javamultiplex.array.algorithms.sorting;
 public class MergeSort {
 
     //Time - O(nlog(n)), Space - O(n)
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         mergeSort(arr, 0, n - 1);
     }
 

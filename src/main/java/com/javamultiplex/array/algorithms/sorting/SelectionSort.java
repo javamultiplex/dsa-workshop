@@ -10,7 +10,8 @@ public class SelectionSort {
 
 
     //Time - O(n*n), Space - O(1)
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         int min, k;
         for (int i = 0; i < n; i++) {
             min = Integer.MAX_VALUE;

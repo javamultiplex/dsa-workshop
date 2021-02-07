@@ -13,7 +13,8 @@ public class CountingSort {
      * Space - O(k)
      * Where K=max element in an array
      */
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         int max = MaxElementInArray.find(arr, n);
         int[] count = new int[max + 1];
         for (int i = 0; i < n; i++) {

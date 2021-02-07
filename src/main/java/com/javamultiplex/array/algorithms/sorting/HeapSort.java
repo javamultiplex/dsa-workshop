@@ -9,7 +9,8 @@ import com.javamultiplex.heap.Heap;
 public class HeapSort {
 
     //Time - O(nlog(n))
-    public static void sort(int[] arr, int n) {
+    public static void sort(int[] arr) {
+        int n = arr.length;
         Heap.buildMaxHeap(arr, n);
         for (int i = n - 1; i > 0; i--) {
             int temp = arr[i];
