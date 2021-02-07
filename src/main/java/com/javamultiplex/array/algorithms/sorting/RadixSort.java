@@ -13,11 +13,12 @@ import java.util.Map;
  * @copyright www.javamultiplex.com
  */
 public class RadixSort {
+    //Time - O((n+radix)*digits)
     public static void sort(int[] arr, int n) {
         int max = MaxElementInArray.find(arr, n);
         int digits = NumberOfDigitsInNumber.method2(max);
-        for (int radix = 0; radix < digits; radix++) {
-            Map<Integer, List<Integer>> bucket = createBucket(arr, n, radix);
+        for (int index = 0; index < digits; index++) {
+            Map<Integer, List<Integer>> bucket = createBucket(arr, n, index);
             int j = 0;
             for (Map.Entry<Integer, List<Integer>> entry : bucket.entrySet()) {
                 List<Integer> v = entry.getValue();
@@ -28,10 +29,11 @@ public class RadixSort {
         }
     }
 
-    private static Map<Integer, List<Integer>> createBucket(int[] arr, int n, int radix) {
+    //Time = O(n+radix), Space = O(n)
+    private static Map<Integer, List<Integer>> createBucket(int[] arr, int n, int index) {
         Map<Integer, List<Integer>> bucket = new HashMap<>();
         for (int j = 0; j < n; j++) {
-            int faceValue = (arr[j] / (int) Math.pow(10, radix)) % 10;
+            int faceValue = (arr[j] / (int) Math.pow(10, index)) % 10;
             List<Integer> values;
             if (bucket.containsKey(faceValue)) {
                 values = bucket.get(faceValue);
