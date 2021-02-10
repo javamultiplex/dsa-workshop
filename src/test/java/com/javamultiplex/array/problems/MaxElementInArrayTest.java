@@ -1,6 +1,5 @@
 package com.javamultiplex.array.problems;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,10 +11,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class MaxElementInArrayTest {
 
     @Test
-    public void shouldFindMaxElement(){
-        int result = MaxElementInArray.find(new int[]{8, 2, 1, 9, -7}, 5);
+    public void shouldFindMaxElement() {
+        int result = MaxElementInArray.find(new int[]{8, 2, 1, 9, -7});
         assertEquals(9, result);
-        int result1 = MaxElementInArray.find(new int[]{-1, -2, -10, -9, -7}, 5);
+        int result1 = MaxElementInArray.find(new int[]{-1, -2, -10, -9, -7});
         assertEquals(-1, result1);
     }
 }

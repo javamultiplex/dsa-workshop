@@ -6,7 +6,8 @@ package com.javamultiplex.array.problems;
  */
 public class MaxElementInArray {
 
-    public static int find(int[] arr, int n) {
+    public static int find(int[] arr) {
+        int n = arr.length;
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
             if (arr[i] > max) {

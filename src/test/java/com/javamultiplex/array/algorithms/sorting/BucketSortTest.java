@@ -12,20 +12,11 @@ public class BucketSortTest {
 
     @Test
     public void shouldSort() {
-        int[] arr = {170, 45, 75, 90, 802, 24, 2, 66};
+        double[] arr = {0.34, 0.22, 0.21, 0.89, 0.67};
         BucketSort.sort(arr);
-        assertArrayEquals(new int[]{2, 24, 45, 66, 75, 90, 170, 802}, arr);
-        int[] brr = {4, 5, 10, 1, 6, 2};
+        assertArrayEquals(new double[]{0.21, 0.22, 0.34, 0.67, 0.89}, arr);
+        double[] brr = {0.12, 0.01, 0.17, 0.118};
         BucketSort.sort(brr);
-        assertArrayEquals(new int[]{1, 2, 4, 5, 6, 10}, brr);
-        int[] crr = {10, 20, 30, 40, 1, 2, 3, 4};
-        BucketSort.sort(crr);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 10, 20, 30, 40}, crr);
-        int[] drr = {12, 11, 13, 5, 6, 7};
-        BucketSort.sort(drr);
-        assertArrayEquals(new int[]{5, 6, 7, 11, 12, 13}, drr);
-        int[] err = {5, 4, 3, 2, 1};
-        BucketSort.sort(err);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5}, err);
+        assertArrayEquals(new double[]{0.01, 0.118, 0.12, 0.17}, brr);
     }
 }
