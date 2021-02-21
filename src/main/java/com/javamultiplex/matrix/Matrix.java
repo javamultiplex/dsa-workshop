@@ -118,7 +118,18 @@ public class Matrix {
     }
 
     public static int[][] addition(int[][] mat1, int[][] mat2) {
-        return null;
+        if (rows(mat1) != rows(mat2) || columns(mat1) != columns(mat2)) {
+            throw new RuntimeException("Matrix addition is not possible because for addition, number of row and columns in both matrices should be same.");
+        }
+        int rows = rows(mat1);
+        int columns = columns(mat1);
+        int[][] mat3 = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                mat3[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+        return mat3;
     }
 
     private static void negate(int[][] mat) {

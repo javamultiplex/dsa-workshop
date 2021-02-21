@@ -196,4 +196,41 @@ public class MatrixTest {
                 {0, 0, 1}
         }));
     }
+
+    @Test
+    public void shouldTestTwoMatrices() {
+        assertArrayEquals(new int[][]{
+                {2, 8, 10},
+                {12, 6, 9}
+        }, Matrix.addition(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6}
+        }, new int[][]{
+                {1, 6, 7},
+                {8, 1, 3}
+        }));
+
+        assertArrayEquals(new int[][]{
+                {2, 8},
+                {12, 6}
+        }, Matrix.addition(new int[][]{
+                {1, 2},
+                {4, 5}
+        }, new int[][]{
+                {1, 6},
+                {8, 1}
+        }));
+
+        assertThrows(RuntimeException.class, () ->
+                Matrix.addition(new int[][]{
+                        {1, 2},
+                        {4, 5}
+                }, new int[][]{
+                        {1, 6, 7},
+                        {8, 1, 3}
+                }),"Matrix addition is not possible because for addition, number of row and columns in both matrices should be same."
+        );
+
+
+    }
 }
