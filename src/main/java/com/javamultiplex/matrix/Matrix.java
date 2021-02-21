@@ -132,6 +132,38 @@ public class Matrix {
         return mat3;
     }
 
+    public static int[][] subtraction(int[][] mat1, int[][] mat2) {
+        if (rows(mat1) != rows(mat2) || columns(mat1) != columns(mat2)) {
+            throw new RuntimeException("Matrix subtraction is not possible because for subtraction, number of row and columns in both matrices should be same.");
+        }
+        int rows = rows(mat1);
+        int columns = columns(mat1);
+        int[][] mat3 = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                mat3[i][j] = mat1[i][j] - mat2[i][j];
+            }
+        }
+        return mat3;
+    }
+
+    public static int[][] multiplication(int[][] mat1, int[][] mat2) {
+        if (columns(mat1) != rows(mat2)) {
+            throw new RuntimeException("For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix.");
+        }
+        int rows = rows(mat1);
+        int columns = columns(mat2);
+        int[][] mat3 = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                for (int k = 0; k < rows(mat2); k++) {
+                    mat3[i][j] += mat1[i][k] * mat2[k][j];
+                }
+            }
+        }
+        return mat3;
+    }
+
     private static void negate(int[][] mat) {
         int size = rows(mat);
         for (int i = 0; i < size; i++) {

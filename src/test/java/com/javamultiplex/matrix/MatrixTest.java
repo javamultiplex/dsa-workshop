@@ -198,7 +198,7 @@ public class MatrixTest {
     }
 
     @Test
-    public void shouldTestTwoMatrices() {
+    public void shouldTestAdditionOfTwoMatrices() {
         assertArrayEquals(new int[][]{
                 {2, 8, 10},
                 {12, 6, 9}
@@ -228,9 +228,79 @@ public class MatrixTest {
                 }, new int[][]{
                         {1, 6, 7},
                         {8, 1, 3}
-                }),"Matrix addition is not possible because for addition, number of row and columns in both matrices should be same."
+                }), "Matrix addition is not possible because for addition, number of row and columns in both matrices should be same."
+        );
+    }
+
+    @Test
+    public void shouldTestSubtractionOfTwoMatrices() {
+        assertArrayEquals(new int[][]{
+                {0, -4, -4},
+                {-4, 4, 3}
+        }, Matrix.subtraction(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6}
+        }, new int[][]{
+                {1, 6, 7},
+                {8, 1, 3}
+        }));
+
+        assertArrayEquals(new int[][]{
+                {0, -4},
+                {-4, 4}
+        }, Matrix.subtraction(new int[][]{
+                {1, 2},
+                {4, 5}
+        }, new int[][]{
+                {1, 6},
+                {8, 1}
+        }));
+
+        assertThrows(RuntimeException.class, () ->
+                Matrix.subtraction(new int[][]{
+                        {1, 2},
+                        {4, 5}
+                }, new int[][]{
+                        {1, 6, 7},
+                        {8, 1, 3}
+                }), "Matrix subtraction is not possible because for subtraction, number of row and columns in both matrices should be same."
         );
 
+    }
+
+    @Test
+    public void shouldTestMultiplicationOfTwoMatrices() {
+        assertArrayEquals(new int[][]{
+                {58, 64},
+                {139, 154}
+        }, Matrix.multiplication(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6}
+        }, new int[][]{
+                {7, 8},
+                {9, 10},
+                {11, 12}
+        }));
+
+        assertArrayEquals(new int[][]{
+                {83, 63, 37, 75}
+        }, Matrix.multiplication(new int[][]{
+                {3, 4, 2}
+        }, new int[][]{
+                {13, 9, 7, 15},
+                {8, 7, 4, 6},
+                {6, 4, 0, 3}
+        }));
+
+        assertThrows(RuntimeException.class, () ->
+                Matrix.multiplication(new int[][]{
+                        {1, 2, 4},
+                        {4, 5, 8}
+                }, new int[][]{
+                        {1, 6, 7},
+                        {8, 1, 3}
+                }), "For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix."
+        );
 
     }
 }
