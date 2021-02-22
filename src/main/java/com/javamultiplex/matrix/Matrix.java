@@ -109,7 +109,7 @@ public class Matrix {
             for (int j = 0; j < n; j++) {
                 if (i != j && mat[i][j] != 0) {
                     return false;
-                } else if (mat[i][j] != 1) {
+                } else if (i == j && mat[i][j] != 1) {
                     return false;
                 }
             }
@@ -162,6 +162,29 @@ public class Matrix {
             }
         }
         return mat3;
+    }
+
+    public static boolean isOrthogonalMatrix(int[][] mat) {
+        int[][] transpose = transpose(mat);
+        int[][] multiplication = multiplication(mat, transpose);
+        return isIdentityMatrix(multiplication);
+    }
+
+    public static boolean isIdempotentMatrix(int[][] mat) {
+        int[][] multiplication = multiplication(mat, mat);
+        return compare(multiplication, mat);
+    }
+
+    public static int trace(int[][] mat) {
+        if (!isSquareMatrix(mat)) {
+            return 0;
+        }
+        int rows = rows(mat);
+        int sum = 0;
+        for (int i = 0; i < rows; i++) {
+            sum += mat[i][i];
+        }
+        return sum;
     }
 
     private static void negate(int[][] mat) {

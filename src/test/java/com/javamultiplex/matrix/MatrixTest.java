@@ -185,12 +185,12 @@ public class MatrixTest {
                 {0, 4}
         }));
 
-        assertFalse(Matrix.isIdentityMatrix(new int[][]{
+        assertTrue(Matrix.isIdentityMatrix(new int[][]{
                 {1, 0},
                 {0, 1}
         }));
 
-        assertFalse(Matrix.isIdentityMatrix(new int[][]{
+        assertTrue(Matrix.isIdentityMatrix(new int[][]{
                 {1, 0, 0},
                 {0, 1, 0},
                 {0, 0, 1}
@@ -302,5 +302,36 @@ public class MatrixTest {
                 }), "For matrix multiplication, the number of columns in the first matrix must be equal to the number of rows in the second matrix."
         );
 
+    }
+
+    @Test
+    public void shouldTestOrthogonalMatrix() {
+        assertTrue(Matrix.isOrthogonalMatrix(new int[][]{
+                {-1, 0},
+                {0, 1}
+        }));
+    }
+
+    @Test
+    public void shouldTestIdempotentMatrix() {
+        assertTrue(Matrix.isIdempotentMatrix(new int[][]{
+                {3, -6},
+                {1, -2}
+        }));
+    }
+
+    @Test
+    public void shouldFindTrace() {
+        assertEquals(15, Matrix.trace(new int[][]{
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        }));
+
+        assertEquals(2, Matrix.trace(new int[][]{
+                {3, -1, 2},
+                {0, 4, 1},
+                {1, -1, -5}
+        }));
     }
 }
