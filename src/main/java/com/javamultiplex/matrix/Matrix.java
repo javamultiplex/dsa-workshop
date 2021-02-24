@@ -164,15 +164,67 @@ public class Matrix {
         return mat3;
     }
 
+    /**
+     * A matrix is said to be orthogonal if AA^T = A^TA = I.
+     *
+     * @param mat
+     * @return
+     */
     public static boolean isOrthogonalMatrix(int[][] mat) {
         int[][] transpose = transpose(mat);
         int[][] multiplication = multiplication(mat, transpose);
         return isIdentityMatrix(multiplication);
     }
 
+    /**
+     * A matrix is said to be idempotent if A^2 = A.
+     *
+     * @param mat
+     * @return
+     */
     public static boolean isIdempotentMatrix(int[][] mat) {
         int[][] multiplication = multiplication(mat, mat);
         return compare(multiplication, mat);
+    }
+
+    /**
+     * A matrix is said to be Involutary if A^2 = I.
+     *
+     * @param mat
+     * @return
+     */
+    public static boolean isInvolutaryMatrix(int[][] mat) {
+        int[][] multiplication = multiplication(mat, mat);
+        return isIdentityMatrix(multiplication);
+    }
+
+    /**
+     * A square matrix is said to be singular matrix if its determinant is zero i.e. |A|=0
+     *
+     * @param mat
+     * @return
+     */
+    public static boolean isSingularMatrix(int[][] mat) {
+        if (!isSquareMatrix(mat)) {
+            return false;
+        }
+        int determinant = Determinant.determinant(mat);
+        return determinant == 0;
+    }
+
+    /**
+     *
+     * A square matrix is said to be non-singular matrix if its determinant is non-zero.
+     *
+     * @param mat
+     * @return
+     */
+    public static boolean isNonSingularMatrix(int[][] mat) {
+        if (!isSquareMatrix(mat)) {
+            return false;
+        }
+        int determinant = Determinant.determinant(mat);
+        return determinant != 0;
     }
 
     public static int trace(int[][] mat) {

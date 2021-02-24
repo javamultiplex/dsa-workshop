@@ -334,4 +334,45 @@ public class MatrixTest {
                 {1, -1, -5}
         }));
     }
+
+    @Test
+    public void shouldTestInvolutaryMatrix() {
+        assertTrue(Matrix.isInvolutaryMatrix(new int[][]{
+                {4, -1},
+                {15, -4}
+        }));
+
+        assertTrue(Matrix.isInvolutaryMatrix(new int[][]{
+                {1, 0, 0},
+                {0, -1, 0},
+                {0, 0, -1}
+        }));
+    }
+
+    @Test
+    public void shouldTestSingularMatrix() {
+        assertTrue(Matrix.isSingularMatrix(new int[][]{
+                {2, 4, 6},
+                {2, 0, 2},
+                {6, 8, 14}
+        }));
+
+        assertFalse(Matrix.isSingularMatrix(new int[][]{
+                {2, 4, 6},
+                {2, 0, 2}
+        }));
+    }
+
+    @Test
+    public void shouldTestNonSingularMatrix() {
+        assertTrue(Matrix.isNonSingularMatrix(new int[][]{
+                {1, 2},
+                {3, 4}
+        }));
+
+        assertFalse(Matrix.isNonSingularMatrix(new int[][]{
+                {1, 2, 4},
+                {3, 4, 6}
+        }));
+    }
 }
