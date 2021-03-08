@@ -18,4 +18,13 @@ public class ZeroSumSubArraysTest {
         assertEquals(4,
                 ZeroSumSubArrays.method1(new int[]{6, -1, -3, 4, -2, 2, 4, 6, -12, -7}, 10));
     }
+
+    @Test
+    public void shouldFindZeroSumSubArrays_method2() {
+        assertEquals(6,
+                ZeroSumSubArrays.method2(new int[]{0, 0, 5, 5, 0, 0}, 6));
+
+        assertEquals(4,
+                ZeroSumSubArrays.method2(new int[]{6, -1, -3, 4, -2, 2, 4, 6, -12, -7}, 10));
+    }
 }
