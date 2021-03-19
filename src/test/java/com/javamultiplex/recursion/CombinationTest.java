@@ -1,4 +1,4 @@
-package com.javamultiplex;
+package com.javamultiplex.recursion;
 
 import com.javamultiplex.recursion.Combination;
 import org.junit.jupiter.api.Assertions;
