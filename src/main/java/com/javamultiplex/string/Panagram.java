@@ -6,8 +6,9 @@ package com.javamultiplex.string;
  */
 public class Panagram {
     public static boolean isPanagram(String str) {
+        String temp = str.toLowerCase();
         for (int i = 97; i <= 122; i++) {
-            if (!str.toLowerCase().contains(String.valueOf((char) i))) {
+            if (!temp.contains(String.valueOf((char) i))) {
                 return false;
             }
         }
