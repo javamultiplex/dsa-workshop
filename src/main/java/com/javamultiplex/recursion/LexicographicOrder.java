@@ -17,6 +17,6 @@ public class LexicographicOrder {
     }
 
     public static void main(String[] args) {
-        lexico(100,0);
+        lexico(115,0);
     }
 }
