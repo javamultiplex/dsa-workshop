@@ -1,4 +1,4 @@
-package com.javamultiplex.daily;
+package com.javamultiplex.problemoftheday;
 
 /**
  * @author Rohit Agarwal on 10/04/21 3:28 pm

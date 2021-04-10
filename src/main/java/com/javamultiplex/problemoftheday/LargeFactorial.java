@@ -1,4 +1,4 @@
-package com.javamultiplex.daily;
+package com.javamultiplex.problemoftheday;
 
 import java.util.Arrays;
 
