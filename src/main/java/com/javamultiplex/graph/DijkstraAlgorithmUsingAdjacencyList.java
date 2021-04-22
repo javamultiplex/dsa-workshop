@@ -7,56 +7,56 @@ import java.util.Arrays;
  * @copyright www.javamultiplex.com
  */
 public class DijkstraAlgorithmUsingAdjacencyList {
-    static class ListNode {
-        int destination;
-        int distance;
-        ListNode next;
+    static class AdjacencyListNode {
+        int id;
+        int weight;
+        AdjacencyListNode next;
 
-        ListNode(int destination, int distance) {
-            this.destination = destination;
-            this.distance = distance;
+        AdjacencyListNode(int id, int weight) {
+            this.id = id;
+            this.weight = weight;
             this.next = null;
         }
     }
 
-    static class List {
-        ListNode head;
+    static class AdjacencyList {
+        AdjacencyListNode head;
     }
 
     static class Graph {
         int vertices;
-        List[] lists;
+        AdjacencyList[] adjacencyLists;
 
         Graph(int vertices) {
             this.vertices = vertices;
-            this.lists = new List[vertices];
+            this.adjacencyLists = new AdjacencyList[vertices];
             for (int i = 0; i < vertices; i++) {
-                this.lists[i] = new List();
-                this.lists[i].head = null;
+                this.adjacencyLists[i] = new AdjacencyList();
+                this.adjacencyLists[i].head = null;
             }
         }
 
         //Graph is BiDirectional so adding edges from both sides.
         void addEdge(int source, int destination, int distance) {
             //Add edge from source to destination
-            ListNode node1 = new ListNode(destination, distance);
-            node1.next = this.lists[source].head;
-            this.lists[source].head = node1;
+            AdjacencyListNode node1 = new AdjacencyListNode(destination, distance);
+            node1.next = this.adjacencyLists[source].head;
+            this.adjacencyLists[source].head = node1;
             //Add edge from destination to source
-            ListNode node2 = new ListNode(source, distance);
-            node2.next = this.lists[destination].head;
-            this.lists[destination].head = node2;
+            AdjacencyListNode node2 = new AdjacencyListNode(source, distance);
+            node2.next = this.adjacencyLists[destination].head;
+            this.adjacencyLists[destination].head = node2;
         }
 
     }
 
     static class MinHeapNode {
-        int vertex;
-        int distance;
+        int id;
+        int weight;
 
-        MinHeapNode(int vertex, int distance) {
-            this.vertex = vertex;
-            this.distance = distance;
+        MinHeapNode(int id, int weight) {
+            this.id = id;
+            this.weight = weight;
         }
 
     }
@@ -65,13 +65,13 @@ public class DijkstraAlgorithmUsingAdjacencyList {
         int capacity;
         int size;
         int[] positions;
-        MinHeapNode[] minHeapNodes;
+        MinHeapNode[] nodes;
 
         MinHeap(int capacity) {
             this.capacity = capacity;
             this.size = 0;
             this.positions = new int[capacity];
-            this.minHeapNodes = new MinHeapNode[capacity];
+            this.nodes = new MinHeapNode[capacity];
         }
 
         boolean isEmpty() {
@@ -82,39 +82,39 @@ public class DijkstraAlgorithmUsingAdjacencyList {
             int smallest = index;
             int left = 2 * index + 1;
             int right = 2 * index + 2;
-            if (left < this.size && this.minHeapNodes[left].distance < this.minHeapNodes[smallest].distance) {
+            if (left < this.size && this.nodes[left].weight < this.nodes[smallest].weight) {
                 smallest = left;
             }
 
-            if (right < this.size && this.minHeapNodes[right].distance < this.minHeapNodes[smallest].distance) {
+            if (right < this.size && this.nodes[right].weight < this.nodes[smallest].weight) {
                 smallest = right;
             }
 
             if (smallest != index) {
-                MinHeapNode smallestNode = this.minHeapNodes[smallest];
-                MinHeapNode indexNode = this.minHeapNodes[index];
-                this.positions[smallestNode.vertex] = index;
-                this.positions[indexNode.vertex] = smallest;
+                MinHeapNode smallestNode = this.nodes[smallest];
+                MinHeapNode indexNode = this.nodes[index];
+                this.positions[smallestNode.id] = index;
+                this.positions[indexNode.id] = smallest;
                 swapMinHeapNodes(smallest, index);
                 minHeapify(smallest);
             }
         }
 
         void swapMinHeapNodes(int node1, int node2) {
-            MinHeapNode temp = this.minHeapNodes[node1];
-            this.minHeapNodes[node1] = this.minHeapNodes[node2];
-            this.minHeapNodes[node2] = temp;
+            MinHeapNode temp = this.nodes[node1];
+            this.nodes[node1] = this.nodes[node2];
+            this.nodes[node2] = temp;
         }
 
         MinHeapNode extractMin() {
             if (isEmpty()) {
                 return null;
             }
-            MinHeapNode rootNode = this.minHeapNodes[0];
-            MinHeapNode lastNode = this.minHeapNodes[this.size - 1];
-            this.minHeapNodes[0] = lastNode;
-            this.positions[rootNode.vertex] = this.size - 1;
-            this.positions[lastNode.vertex] = 0;
+            MinHeapNode rootNode = this.nodes[0];
+            MinHeapNode lastNode = this.nodes[this.size - 1];
+            this.nodes[0] = lastNode;
+            this.positions[rootNode.id] = this.size - 1;
+            this.positions[lastNode.id] = 0;
             this.size--;
             minHeapify(0);
             return rootNode;
@@ -122,10 +122,10 @@ public class DijkstraAlgorithmUsingAdjacencyList {
 
         void decreaseKey(int vertex, int distance) {
             int index = this.positions[vertex];
-            this.minHeapNodes[index].distance = distance;
-            while (index != 0 && this.minHeapNodes[index].distance < this.minHeapNodes[(index - 1) / 2].distance) {
-                this.positions[this.minHeapNodes[index].vertex] = (index - 1) / 2;
-                this.positions[this.minHeapNodes[(index - 1) / 2].vertex] = index;
+            this.nodes[index].weight = distance;
+            while (index != 0 && this.nodes[index].weight < this.nodes[(index - 1) / 2].weight) {
+                this.positions[this.nodes[index].id] = (index - 1) / 2;
+                this.positions[this.nodes[(index - 1) / 2].id] = index;
                 swapMinHeapNodes(index, (index - 1) / 2);
                 index = (index - 1) / 2;
             }
@@ -145,7 +145,7 @@ public class DijkstraAlgorithmUsingAdjacencyList {
         MinHeap minHeap = new MinHeap(vertices);
         for (int i = 0; i < vertices; i++) {
             distances[i] = Integer.MAX_VALUE;
-            minHeap.minHeapNodes[i] = new MinHeapNode(i, distances[i]);
+            minHeap.nodes[i] = new MinHeapNode(i, distances[i]);
             minHeap.positions[i] = i;
         }
         distances[source] = 0;
@@ -154,17 +154,17 @@ public class DijkstraAlgorithmUsingAdjacencyList {
 
         while (!minHeap.isEmpty()) {
             MinHeapNode min = minHeap.extractMin();
-            int u = min.vertex;
-            ListNode listNode = graph.lists[u].head;
-            while (listNode != null) {
-                int v = listNode.destination;
+            int u = min.id;
+            AdjacencyListNode adjacencyListNode = graph.adjacencyLists[u].head;
+            while (adjacencyListNode != null) {
+                int v = adjacencyListNode.id;
                 if (minHeap.isInMinHeap(v)
                         && distances[u] != Integer.MAX_VALUE
-                        && listNode.distance + distances[u] < distances[v]) {
-                    distances[v] = listNode.distance + distances[u];
+                        && adjacencyListNode.weight + distances[u] < distances[v]) {
+                    distances[v] = adjacencyListNode.weight + distances[u];
                     minHeap.decreaseKey(v, distances[v]);
                 }
-                listNode = listNode.next;
+                adjacencyListNode = adjacencyListNode.next;
             }
         }
         return distances;
