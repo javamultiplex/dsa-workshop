@@ -11,7 +11,7 @@ import java.util.List;
 public class Divisors {
 
     //TC - theta(n)
-    public static List<Integer> method1(int n) {
+    public static List<Integer> v1(int n) {
         List<Integer> output = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
@@ -22,7 +22,7 @@ public class Divisors {
     }
 
     //TC - theta(sqrt(n)) but result is not in sorted order
-    public static List<Integer> method2(int n) {
+    public static List<Integer> v2(int n) {
         List<Integer> output = new ArrayList<>();
         for (int i = 1; i * i <= n; i++) {
             if (n % i == 0) {
@@ -36,7 +36,7 @@ public class Divisors {
     }
 
     //TC - theta(sqrt(n)) but result is in sorted order
-    public static List<Integer> method3(int n) {
+    public static List<Integer> v3(int n) {
         List<Integer> output = new ArrayList<>();
         int i;
         for (i = 1; i * i < n; i++) {
@@ -54,13 +54,13 @@ public class Divisors {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = method1(30);
+        List<Integer> list = v1(30);
         System.out.println(list);
 
-        List<Integer> list1 = method2(30);
+        List<Integer> list1 = v2(30);
         System.out.println(list1);
 
-        List<Integer> list2 = method3(30);
+        List<Integer> list2 = v3(30);
         System.out.println(list2);
     }
 

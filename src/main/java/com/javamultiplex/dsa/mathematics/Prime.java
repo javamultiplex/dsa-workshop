@@ -7,7 +7,7 @@ package com.javamultiplex.dsa.mathematics;
 public class Prime {
 
     //TC - O(n), SC - O(1)
-    public static boolean method1(int n) {
+    public static boolean v1(int n) {
         if (n == 1) {
             return false;
         }
@@ -23,7 +23,7 @@ public class Prime {
 
 
     //TC - O(sqrt(n))
-    public static boolean method2(int n) {
+    public static boolean v2(int n) {
         if (n == 1) {
             return false;
         }
@@ -37,7 +37,7 @@ public class Prime {
         return true;
     }
 
-    public static boolean method3(int n) {
+    public static boolean v3(int n) {
         if (n == 1) {
             return false;
         }
@@ -59,15 +59,15 @@ public class Prime {
     }
 
     public static void main(String[] args) {
-        System.out.println(method1(1));
-        System.out.println(method1(2));
-        System.out.println(method1(4));
-        System.out.println(method1(13));
+        System.out.println(v1(1));
+        System.out.println(v1(2));
+        System.out.println(v1(4));
+        System.out.println(v1(13));
 
 
-        System.out.println(method2(1));
-        System.out.println(method2(2));
-        System.out.println(method2(4));
-        System.out.println(method2(13));
+        System.out.println(v2(1));
+        System.out.println(v2(2));
+        System.out.println(v2(4));
+        System.out.println(v2(13));
     }
 }

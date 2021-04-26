@@ -8,12 +8,12 @@ import java.util.List;
  * @copyright www.javamultiplex.com
  */
 public class PrimeFactors {
-    public static List<Integer> method1(int n) {
+    public static List<Integer> v1(int n) {
         List<Integer> output = new ArrayList<>();
         //TC - O(n*sqrt(n)*log(n))
         for (int i = 1; i <= n; i++) {
             //TC - O(sqrt(n))
-            if (Prime.method3(i)) {
+            if (Prime.v3(i)) {
                 int x = i;
                 //TC - O(log(n))
                 while (n % x == 0) {
@@ -25,7 +25,7 @@ public class PrimeFactors {
         return output;
     }
 
-    public static List<Integer> method2(int n) {
+    public static List<Integer> v2(int n) {
         List<Integer> output = new ArrayList<>();
         if (n <= 1) {
             return output;
@@ -43,7 +43,7 @@ public class PrimeFactors {
         return output;
     }
 
-    public static List<Integer> method3(int n) {
+    public static List<Integer> v3(int n) {
         List<Integer> output = new ArrayList<>();
         if (n <= 1) {
             return output;
@@ -78,25 +78,25 @@ public class PrimeFactors {
     }
 
     public static void main(String[] args) {
-        List<Integer> list = method1(12);
+        List<Integer> list = v1(12);
         System.out.println(list);
-        List<Integer> list1 = method1(13);
+        List<Integer> list1 = v1(13);
         System.out.println(list1);
-        List<Integer> list2 = method3(450);
+        List<Integer> list2 = v3(450);
         System.out.println(list2);
 
-        List<Integer> list3 = method2(12);
+        List<Integer> list3 = v2(12);
         System.out.println(list3);
-        List<Integer> list4 = method2(13);
+        List<Integer> list4 = v2(13);
         System.out.println(list4);
-        List<Integer> list5 = method2(450);
+        List<Integer> list5 = v2(450);
         System.out.println(list5);
 
-        List<Integer> list6 = method3(12);
+        List<Integer> list6 = v3(12);
         System.out.println(list6);
-        List<Integer> list7 = method3(13);
+        List<Integer> list7 = v3(13);
         System.out.println(list7);
-        List<Integer> list8 = method3(450);
+        List<Integer> list8 = v3(450);
         System.out.println(list8);
 
 

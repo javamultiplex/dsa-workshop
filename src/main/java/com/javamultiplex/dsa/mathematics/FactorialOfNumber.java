@@ -7,7 +7,7 @@ package com.javamultiplex.dsa.mathematics;
 public class FactorialOfNumber {
 
     //TC - theta(n), SC - theta(1)
-    public static int iterative(int n) {
+    public static int v1(int n) {
         int fact = 1;
         for (int i = 2; i <= n; i++) {
             fact *= i;
@@ -16,20 +16,20 @@ public class FactorialOfNumber {
     }
 
     //TC - theta(n), SC - theta(n)
-    public static int recursive(int n) {
+    public static int v2(int n) {
         if (n == 0) {
             return 1;
         }
 
-        return n * recursive(n - 1);
+        return n * v2(n - 1);
     }
 
     public static void main(String[] args) {
-        System.out.println(iterative(5));
-        System.out.println(iterative(4));
+        System.out.println(v1(5));
+        System.out.println(v1(4));
 
-        System.out.println(recursive(5));
-        System.out.println(recursive(4));
+        System.out.println(v2(5));
+        System.out.println(v2(4));
     }
 
 }

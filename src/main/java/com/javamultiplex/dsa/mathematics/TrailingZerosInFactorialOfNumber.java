@@ -6,7 +6,7 @@ package com.javamultiplex.dsa.mathematics;
  */
 public class TrailingZerosInFactorialOfNumber {
 
-    public static int getTrailingZeros(int n) {
+    public static int v1(int n) {
         int temp = 5;
         int count = 0;
         while (temp <= n) {
@@ -18,7 +18,7 @@ public class TrailingZerosInFactorialOfNumber {
 
 
     public static void main(String[] args) {
-        int trailingZeros = getTrailingZeros(25);
+        int trailingZeros = v1(25);
         System.out.println(trailingZeros);
     }
 
