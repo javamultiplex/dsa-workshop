@@ -7,7 +7,7 @@ import java.util.Map;
  * @author Rohit Agarwal on 02/05/21 12:01 am
  * @copyright www.javamultiplex.com
  */
-public class OddOccurrence {
+public class OneOddOccurrence {
 
     //TC - O(n^2), SC - O(1)
     public static int v1(int[] arr) {
