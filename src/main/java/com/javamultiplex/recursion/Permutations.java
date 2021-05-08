@@ -24,6 +24,30 @@ public class Permutations {
 
     }
 
+
+    public static void permutationsWithDistinctCharactersV2(String string, int j) {
+        int length = string.length();
+        if (j == length - 1) {
+            System.out.println(string);
+            return;
+        }
+
+        for (int i = j; i < length; i++) {
+            string = swap(string, i, j);
+            permutationsWithDistinctCharactersV2(string, j + 1);
+            string = swap(string, i, j);
+        }
+
+    }
+
+    private static String swap(String string, int i, int j) {
+        char[] chars = string.toCharArray();
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+        return new String(chars);
+    }
+
     public static void permutationsWithDuplicateCharacters(String string, String permutation) {
         int length = string.length();
         if (length == 0) {
@@ -44,6 +68,7 @@ public class Permutations {
 
     public static void main(String[] args) {
         permutationsWithDistinctCharacters("ABC", "");
+        permutationsWithDistinctCharactersV2("ABC",0);
         permutationsWithDuplicateCharacters("AAC", "");
     }
 }
