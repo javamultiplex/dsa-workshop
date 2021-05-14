@@ -4,6 +4,7 @@ package com.javamultiplex.backtracking;
  * @author Rohit Agarwal on 09/05/21 10:47 pm
  * @copyright www.javamultiplex.com
  */
+//Number of ways to place N non-attacking queens in NXN board (OEIS: A000170).
 public class NQueens {
 
     private static int COUNT = 0;
@@ -11,6 +12,7 @@ public class NQueens {
     public static void countNQueens(boolean[][] grid, int currentRow, int n) {
         if (currentRow == n) {
             COUNT++;
+            display(grid, n);
             return;
         }
 
@@ -45,9 +47,24 @@ public class NQueens {
         return true;
     }
 
+    private static void display(boolean[][] grid, int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j]) {
+                    System.out.print("Q ");
+                } else {
+                    System.out.print(". ");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
-        boolean[][] grid = new boolean[6][6];
-        countNQueens(grid, 0, 6);
+        int n = 4;
+        boolean[][] grid = new boolean[n][n];
+        countNQueens(grid, 0, n);
         System.out.println(COUNT);
     }
 }
