@@ -46,14 +46,8 @@ public class NQueens {
     }
 
     public static void main(String[] args) {
-        boolean[][] grid = new boolean[4][4];
-        countNQueens(grid, 0, 4);
-        System.out.println(COUNT);
-
-        COUNT = 0;
-
-        boolean[][] grid2 = new boolean[5][5];
-        countNQueens(grid2, 0, 5);
+        boolean[][] grid = new boolean[6][6];
+        countNQueens(grid, 0, 6);
         System.out.println(COUNT);
     }
 }
