@@ -1,6 +1,6 @@
 package com.javamultiplex.recursion;
 
-import org.junit.jupiter.api.Assertions;
+import com.javamultiplex.dsa.recursion.Palindrome;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

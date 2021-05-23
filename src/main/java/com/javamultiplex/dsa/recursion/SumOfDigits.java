@@ -1,4 +1,4 @@
-package com.javamultiplex.recursion;
+package com.javamultiplex.dsa.recursion;
 
 /**
  * @author Rohit Agarwal on 14/05/21 11:22 pm
